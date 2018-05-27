@@ -4,3 +4,6 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+
+# Workaround for Windows 2008R2 DNS server, that don't support cookies
+alias dig="dig +nocookie"

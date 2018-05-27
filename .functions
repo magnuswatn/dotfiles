@@ -1,0 +1,16 @@
+mkchdir () {
+  mkdir -p -- "$1" && cd -P -- "$1"
+}
+
+proxy() {
+  if [ "$1" == "on" ]; then
+    export http_proxy=$PROXY
+    export https_proxy=$PROXY
+  elif [ "$1" == "off" ]; then
+    export http_proxy=""
+    export https_proxy=""
+  else
+    echo "Unknown argument. Must be \"on\" or \"off\"."
+  fi
+}
+

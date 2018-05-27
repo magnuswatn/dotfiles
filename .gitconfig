@@ -1,0 +1,3 @@
+[core]
+	# autocrlf is stupid and confusing
+	autocrlf = false

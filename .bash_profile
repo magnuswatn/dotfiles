@@ -14,3 +14,6 @@ unset file;
 if which pipenv &> /dev/null; then
   eval "$(pipenv --completion)"
 fi;
+
+# Long paths are yucky
+PROMPT_DIRTRIM=1

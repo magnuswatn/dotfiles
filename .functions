@@ -14,3 +14,10 @@ proxy() {
   fi
 }
 
+digh() {
+  dig @${H_RESOLVER} "$@"
+}
+
+digi () {
+  dig @${I_RESOLVER} "$@"
+}

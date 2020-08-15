@@ -12,5 +12,6 @@
     "python.linting.mypyEnabled": true,
     "python.linting.pylintUseMinimalCheckers": false,
     "python.formatting.provider": "black",
-    "python.languageServer": "Pylance"
+    "python.languageServer": "Pylance",
+    "java.server.launchMode": "LightWeight"
 }

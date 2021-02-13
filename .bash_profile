@@ -10,10 +10,5 @@ for file in ~/.{bashrc,aliases,functions,extra}; do
 done;
 unset file;
 
-# Add tab completion for pipenv
-if which pipenv &> /dev/null; then
-  eval "$(pipenv --completion)"
-fi;
-
 # Long paths are yucky
 PROMPT_DIRTRIM=1

@@ -21,3 +21,7 @@ digh() {
 digi () {
   dig @${I_RESOLVER} "$@"
 }
+
+setTitle () {
+  echo -ne "\033]0;$1\a";
+}

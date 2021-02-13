@@ -1,3 +1,15 @@
 [core]
-	# autocrlf is stupid and confusing
-	autocrlf = false
+  # autocrlf is stupid and confusing
+  autocrlf = false
+
+# https://twitter.com/glyph/status/1359955841810530304
+[protocol "http"]
+  allow = never
+[protocol "git"]
+  allow = never
+[fetch]
+  fsckObjects = true
+[transfer]
+  fsckObjects = true
+[receive]
+  fsckObjects = true

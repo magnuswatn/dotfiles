@@ -1,6 +1,9 @@
 [core]
   # autocrlf is stupid and confusing
   autocrlf = false
+  editor = vim
+[init]
+  defaultBranch = main
 
 # https://twitter.com/glyph/status/1359955841810530304
 [protocol "http"]

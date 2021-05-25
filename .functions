@@ -25,3 +25,18 @@ digi () {
 setTitle () {
   echo -ne "\033]0;$1\a";
 }
+
+
+genPwd () {
+python3 - << EOF
+import random
+import string
+
+chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
+print(
+    "".join(
+        random.SystemRandom().choice(chars) for _ in range(32)
+    )
+)
+EOF
+}

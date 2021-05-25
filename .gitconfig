@@ -18,3 +18,5 @@
   fsckObjects = true
 [receive]
   fsckObjects = true
+[push]
+  default = current

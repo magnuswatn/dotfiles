@@ -40,3 +40,11 @@ print(
 )
 EOF
 }
+
+urlencode () {
+  python3 -c 'import sys, urllib.parse; print(urllib.parse.quote(input(), safe=""))'
+}
+
+urldecode () {
+  python3 -c 'import sys, urllib.parse; print(urllib.parse.unquote(input()))'
+}

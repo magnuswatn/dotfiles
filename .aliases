@@ -4,9 +4,3 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias urlencode='python3 -c "import sys, urllib.parse; \
-    print (urllib.parse.quote(sys.argv[1]))"'
-
-alias urldecode='python3 -c "import sys, urllib.parse; \
-    print(ulllib.parse.unquote(sys.argv[1]))"'
-

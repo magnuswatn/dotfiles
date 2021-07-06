@@ -10,6 +10,11 @@ for file in ~/.{bashrc,aliases,functions,extra}; do
 done;
 unset file;
 
+# Add tab completion for kubectl
+if which kubectl &> /dev/null; then
+  source <(kubectl completion bash)
+fi;
+
 # Long paths are yucky
 PROMPT_DIRTRIM=1
 

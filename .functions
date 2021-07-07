@@ -22,10 +22,17 @@ digi () {
   dig @${I_RESOLVER} "$@"
 }
 
+iph () {
+  echo "$(curl ${H_IPSERVICE} --silent)"
+}
+
+ipi () {
+  echo "$(curl ${I_IPSERVICE} --silent)"
+}
+
 setTitle () {
   echo -ne "\033]0;$1\a";
 }
-
 
 genPwd () {
 python3 - << EOF

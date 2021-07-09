@@ -36,15 +36,30 @@ setTitle () {
 
 genPwd () {
 python3 - << EOF
-import random
+import secrets
 import string
 
 chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
 print(
     "".join(
-        random.SystemRandom().choice(chars) for _ in range(32)
+        secrets.choice(chars) for _ in range(32)
     )
 )
+EOF
+}
+
+genPwdPhrase () {
+python3 - << EOF
+import secrets
+from pathlib import Path
+
+words = [
+    wrd
+    for wrd in Path("/usr/share/dict/words")
+    .read_text(encoding="ISO-8859-1")
+    .splitlines()
+]
+print(" ".join(secrets.choice(words) for _ in range(6)))
 EOF
 }
 

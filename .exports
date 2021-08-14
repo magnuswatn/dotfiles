@@ -1,0 +1,6 @@
+#!/bin/bash
+export HISTCONTROL=ignoreboth
+
+# Don’t clear the screen when
+# quitting a man page.
+export MANPAGER="less -X"

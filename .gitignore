@@ -1,2 +1,4 @@
 .extra
 .config/htop
+.config/caddy
+.config/configstore

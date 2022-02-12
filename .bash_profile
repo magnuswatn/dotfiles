@@ -1,3 +1,4 @@
+#!/bin/bash
 # .bash_profile
 
 # User specific environment and startup programs
@@ -18,12 +19,12 @@ fi;
 # Long paths are yucky
 PROMPT_DIRTRIM=1
 
-if [ -z "$SSH_AUTH_SOCK" ]; then
+if [[ -z "${SSH_AUTH_SOCK}" ]]; then
    # Check for a currently running instance of the agent
-   RUNNING_AGENT="`ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'`"
-   if [ "$RUNNING_AGENT" = "0" ]; then
+   RUNNING_AGENT="$(pgrep -cf 'ssh-agent -s')"
+   if [[ "${RUNNING_AGENT}" = "0" ]]; then
         # Launch a new instance of the agent
-        ssh-agent -s &> $HOME/.ssh/ssh-agent
+        ssh-agent -s &> "${HOME}/.ssh/ssh-agent"
    fi
-   eval `cat $HOME/.ssh/ssh-agent`
+   eval "$(cat "${HOME}/.ssh/ssh-agent")"
 fi

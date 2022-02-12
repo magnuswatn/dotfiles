@@ -7,12 +7,12 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 # Load the shell dotfiles, and then some:
 # * ~/.extra can be used for personal settings
 for file in ~/.{bashrc,aliases,functions,exports,extra}; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+  [ -r "${file}" ] && [ -f "${file}" ] && source "${file}";
 done;
 unset file;
 
 # Add tab completion for kubectl
-if which kubectl &> /dev/null; then
+if command -v kubectl &> /dev/null; then
   source <(kubectl completion bash)
 fi;
 

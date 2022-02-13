@@ -6,6 +6,8 @@
   defaultBranch = main
 [pull]
   ff = only
+[push]
+  default = current
 
 # https://twitter.com/glyph/status/1359955841810530304
 [protocol "http"]
@@ -18,5 +20,3 @@
   fsckObjects = true
 [receive]
   fsckObjects = true
-[push]
-  default = current

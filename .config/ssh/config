@@ -1,0 +1,4 @@
+# The UX benefits (tab auto-complete)
+# of not hashing known hosts are
+# greater than the "security risks".
+HashKnownHosts no

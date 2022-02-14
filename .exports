@@ -1,4 +1,6 @@
 #!/bin/bash
+export HISTSIZE=50000000;
+export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoreboth
 
 # Don’t clear the screen when

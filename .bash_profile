@@ -16,6 +16,10 @@ if command -v kubectl &> /dev/null; then
   source <(kubectl completion bash)
 fi;
 
+if command -v certpeek &> /dev/null; then
+  eval "$(_CERTPEEK_COMPLETE=source_bash certpeek)"
+fi;
+
 # Long paths are yucky
 PROMPT_DIRTRIM=1
 

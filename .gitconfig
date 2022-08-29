@@ -8,6 +8,14 @@
   ff = only
 [push]
   default = current
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  allowedSignersFile = ~/.config/git/allowed_signers
+[user]
+  signingkey = ~/.config/git/git_signing_key
+[commit]
+  gpgsign = true
 
 # https://twitter.com/glyph/status/1359955841810530304
 [protocol "http"]

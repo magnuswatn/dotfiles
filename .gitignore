@@ -3,3 +3,5 @@
 .config/caddy
 .config/configstore
 .config/git/gitk
+.config/iterm2
+.config/git

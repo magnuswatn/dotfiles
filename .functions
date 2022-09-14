@@ -63,3 +63,30 @@ urlencode () {
 urldecode () {
   python3 -c 'import sys, urllib.parse; print(urllib.parse.unquote(input()))'
 }
+
+base64urldecode () {
+  python3 -c '
+import sys
+from base64 import urlsafe_b64decode
+data = input()
+num_padding = (4 - len(data) % 4) % 4
+sys.stdout.buffer.write(urlsafe_b64decode(data + "=" * num_padding))
+'
+}
+
+base64urlencode () {
+  python3 -c '
+import sys
+from base64 import urlsafe_b64encode
+sys.stdout.buffer.write(urlsafe_b64encode(sys.stdin.buffer.read()))
+'
+}
+
+purgeLocalBranches() {
+  main_branch=$(git branch --list master main --format="%(refname:short)")
+  for branch in $(git branch --merged "origin/$main_branch" --format="%(refname:short)"); do
+    if [[ "$branch" != "$main_branch" ]]; then
+      git branch -D "$branch"
+    fi
+  done
+}

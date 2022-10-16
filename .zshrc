@@ -1,32 +1,37 @@
-#!/bin/bash
-# .bash_profile
+export PATH=$HOME/.local/bin:$PATH
 
-# User specific environment and startup programs
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+# oh-my-zsh config
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+COMPLETION_WAITING_DOTS="true"
+plugins=(git docker docker-compose)
+source $ZSH/oh-my-zsh.sh
 
 # Load the shell dotfiles, and then some:
 # * ~/.extra can be used for personal settings
-for file in ~/.{bashrc,aliases,functions,exports,extra}; do
+for file in ~/.{aliases,functions,exports,extra}; do
   [ -r "${file}" ] && [ -f "${file}" ] && source "${file}";
 done;
 unset file;
 
-# Add tab completion for kubectl
+# tab autocomplete
+if command -v pipx &> /dev/null; then
+  eval "$(register-python-argcomplete pipx)"
+fi;
+
 if command -v kubectl &> /dev/null; then
-  source <(kubectl completion bash)
+  source <(kubectl completion zsh)
 fi;
 
 if command -v certpeek &> /dev/null; then
-  eval "$(_CERTPEEK_COMPLETE=source_bash certpeek)"
+  eval "$(_CERTPEEK_COMPLETE=zsh_source certpeek)"
 fi;
 
-# Long paths are yucky
-PROMPT_DIRTRIM=1
-
-if [[ -z "${MAGNUS_BEHOLD_PROMPT}" ]]; then
-  PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+if command -v pipenv &> /dev/null; then
+  eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 fi
 
+# ssh agent
 if [[ -z "${SSH_AUTH_SOCK}" ]]; then
    # Check for a currently running instance of the agent
    RUNNING_AGENT="$(pgrep -cf 'ssh-agent -s')"

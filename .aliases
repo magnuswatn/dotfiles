@@ -1,9 +1,0 @@
-#!/bin/bash
-# Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
-# Append history before starting tmux
-alias tmux="history -a; tmux"

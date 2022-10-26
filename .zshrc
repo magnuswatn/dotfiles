@@ -31,6 +31,10 @@ if command -v pipenv &> /dev/null; then
   eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 fi
 
+if command -v hatch &> /dev/null; then
+  eval "$(_HATCH_COMPLETE=zsh_source hatch)"
+fi
+
 # ssh agent
 if [[ -z "${SSH_AUTH_SOCK}" ]]; then
    # Check for a currently running instance of the agent

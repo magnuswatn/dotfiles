@@ -14,6 +14,9 @@ for file in ~/.{aliases,functions,exports,extra}; do
 done;
 unset file;
 
+# zsh options
+unsetopt share_history
+
 # tab autocomplete
 if command -v pipx &> /dev/null; then
   eval "$(register-python-argcomplete pipx)"

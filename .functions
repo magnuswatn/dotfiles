@@ -91,6 +91,18 @@ purgeLocalBranches() {
   done
 }
 
+purgeMergedPrBranches() {
+  recentlyMergedPrs=$(gh pr list --state merged --author magnuswatn --json headRefName,headRefOid)
+  for row in $(echo "${recentlyMergedPrs}" | jq -cr '.[]'); do
+    branch_name=$(echo "${row}" | jq -r '.headRefName')
+    remote_head=$(echo "${row}" | jq -r '.headRefOid')
+    local_head=$(git rev-parse --verify --quiet "${branch_name}")
+    if [[ $local_head == "${remote_head}" ]]; then
+      git branch -D "$branch_name"
+    fi
+  done
+}
+
 stæsj() {
   git commit -am "stæsjet" --no-gpg-sign
 }

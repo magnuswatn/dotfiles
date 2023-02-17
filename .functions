@@ -90,3 +90,16 @@ purgeLocalBranches() {
     fi
   done
 }
+
+stæsj() {
+  git commit -am "stæsjet" --no-gpg-sign
+}
+
+unstæsj() {
+  last_commit_msg=$(git log -1 --pretty=%B)
+  if [[ $last_commit_msg != "stæsjet" ]]; then
+    echo "Last commit is not a 'stæsj' commit. Can't unstæsj"
+    return 1
+  fi
+  git reset HEAD~1
+}

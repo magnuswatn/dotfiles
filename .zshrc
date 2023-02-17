@@ -38,6 +38,11 @@ if command -v hatch &> /dev/null; then
   eval "$(_HATCH_COMPLETE=zsh_source hatch)"
 fi
 
+if command -v gh &> /dev/null; then
+  source <(gh completion -s zsh)
+  compdef _gh gh
+fi
+
 # ssh agent
 if [[ -z "${SSH_AUTH_SOCK}" ]]; then
    # Check for a currently running instance of the agent

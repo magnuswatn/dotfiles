@@ -104,7 +104,7 @@ purgeMergedPrBranches() {
 }
 
 stæsj() {
-  if [[ $(git diff --staged --name-only | wc -l) == 0 ]]; then
+  if [[ $(($(git diff --staged --name-only | wc -l))) == 0 ]]; then
     git add -A
   fi
   git commit -m "stæsjet" --no-gpg-sign --no-verify

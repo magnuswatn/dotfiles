@@ -4,6 +4,7 @@
   editor = code --wait
 [init]
   defaultBranch = main
+  templateDir = ~/.config/git/template_dir
 [pull]
   ff = only
 [push]

@@ -1,18 +1,22 @@
 export PATH=$HOME/.local/bin:$PATH
 
-# oh-my-zsh config
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
-COMPLETION_WAITING_DOTS="true"
-plugins=(git docker docker-compose)
-source $ZSH/oh-my-zsh.sh
-
 # Load the shell dotfiles, and then some:
 # * ~/.extra can be used for personal settings
 for file in ~/.{aliases,functions,exports,extra}; do
   [ -r "${file}" ] && [ -f "${file}" ] && source "${file}";
 done;
 unset file;
+
+if command -v brew &> /dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
+# oh-my-zsh config
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+COMPLETION_WAITING_DOTS="true"
+plugins=(git docker docker-compose)
+source $ZSH/oh-my-zsh.sh
 
 # zsh options
 unsetopt share_history

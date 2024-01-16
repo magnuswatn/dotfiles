@@ -1,0 +1,7 @@
+[window]
+option_as_alt = "OnlyRight"
+
+[keyboard]
+bindings = [
+    { key = "Tab", mods = "Control", action = "SelectNextTab" },
+]

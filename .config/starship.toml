@@ -2,3 +2,8 @@
 when = 'test "$(git log -1 --pretty=%B)" = "stæsjet"'
 command = 'echo -e "\033[0;31m- STÆSJET\033[0m"'
 require_repo = true
+
+
+[env_var]
+variable = 'CREDZ_ENV'
+format = '🔓❗'

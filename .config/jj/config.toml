@@ -1,0 +1,13 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[ui]
+editor = "hx"
+
+[signing]
+behavior = "drop"
+backend = "ssh"
+backends.ssh.allowed-signers = "~/.config/git/allowed_signers"
+key = "~/.config/git/git_signing_key"
+
+[git]
+sign-on-push = true

@@ -1,0 +1,5 @@
+font-family = "Berkeley Mono"
+
+keybind = opt+space=text:\x20
+
+macos-option-as-alt = right

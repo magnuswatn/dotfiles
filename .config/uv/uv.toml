@@ -1,0 +1,4 @@
+# Only use managed python for older versions,
+# so prefer system python, so that new projects
+# use a newer version
+python-preference = "system"

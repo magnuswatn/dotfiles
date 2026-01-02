@@ -1,8 +1,2 @@
 .extra
-.config/htop
-.config/caddy
-.config/configstore
-.config/git/gitk
-.config/iterm2
-.config/wireshark/
 .config/git/git_signing_key

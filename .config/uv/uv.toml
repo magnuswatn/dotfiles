@@ -2,3 +2,7 @@
 # so prefer system python, so that new projects
 # use a newer version
 python-preference = "system"
+
+# 14 days cooldown
+exclude-newer = "P14D"
+exclude-newer-package = { ty=false, certpeek=false }
